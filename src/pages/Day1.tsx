@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import clsx from "clsx";
 
 interface ObjectTypes {
@@ -44,7 +44,10 @@ const Day1 = (): JSX.Element => {
         </div>
         <div className="flex justify-between space-x-4">
           <button
-            className="bg-cyan-800 p-2 rounded-lg border border-white"
+            className={clsx(
+              "bg-cyan-800 p-2 rounded-lg border border-white",
+              input > 0 ? "cursor-pointer" : "cursor-not-allowed bg-gray-400"
+            )}
             onClick={handleClick}
           >
             兌換
