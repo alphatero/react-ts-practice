@@ -1,13 +1,12 @@
-import { useState } from "react";
-import reactLogo from "./assets/react.svg";
 import "./App.css";
 import Day1 from "./pages/Day1";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="App">
+    <div className="App w-screen">
+      <a href="https://github.com/alphatero/react-ts-practice/blob/master/src/pages/Day1.tsx">
+        程式碼
+      </a>
       <Day1 />
     </div>
   );
