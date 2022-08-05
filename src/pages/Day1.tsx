@@ -54,8 +54,6 @@ const Day1 = (): JSX.Element => {
       rate: Number(target.rate.value),
     };
 
-    console.log(newRate);
-
     setRateList([...rateList, newRate]);
   };
 
@@ -66,10 +64,6 @@ const Day1 = (): JSX.Element => {
     money - input < 0 ? setMoney(0) : setMoney(money - input);
     setList([...list, { input, output, type: rateList[type].type }]);
   };
-
-  useEffect(() => {
-    console.log(rateList);
-  });
 
   return (
     <div className="w-3/4 mx-auto">
