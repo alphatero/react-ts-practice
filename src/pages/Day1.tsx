@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import clsx from "clsx";
 
 interface ObjectTypes {
@@ -35,13 +35,23 @@ type listType = {
   type: string;
 };
 
-const Day1 = (): JSX.Element => {
+export const Day1 = (): JSX.Element => {
   const [output, setOutput] = useState<number>(0);
   const [input, setInput] = useState<number>(0);
   const [type, setType] = useState<number>(0);
   const [money, setMoney] = useState<number>(5000);
   const [rateList, setRateList] = useState<ObjectTypes[]>(exchangeRate);
   const [list, setList] = useState<[] | listType[]>([]);
+
+  const isNumber = (value: string | number): boolean => {
+    return !isNaN(Number(value)) && value > 0;
+  };
+
+  const STEP = 2;
+
+  const formatFloat = (value: number): string => {
+    return value.toFixed(STEP);
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -67,6 +77,9 @@ const Day1 = (): JSX.Element => {
 
   return (
     <div className="w-3/4 mx-auto">
+      <a href="https://github.com/alphatero/react-ts-practice/blob/master/src/pages/Day1.tsx">
+        程式碼
+      </a>
       <h1 className="m-8">Day 1 - 匯率兌換</h1>
 
       <div className="flex flex-col items-center space-y-4">
@@ -122,7 +135,7 @@ const Day1 = (): JSX.Element => {
                   >
                     {item.type}
                   </button>
-                  <p>{(item.rate * input).toFixed(2)}</p>
+                  <p>{formatFloat(item.rate * input)}</p>
                 </li>
               ))}
             </ul>
@@ -165,5 +178,3 @@ const Day1 = (): JSX.Element => {
     </div>
   );
 };
-
-export default Day1;
