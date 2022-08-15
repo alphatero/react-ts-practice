@@ -62,8 +62,7 @@ export const Day2 = () => {
         <nav className="flex ">
           <h1>
             <a
-              className=" 
-               block w-[243px] h-[40px] overflow-hidden bg-[url('https://upload.cc/i1/2022/03/23/8vTzYG.png')] bg-no-repeat"
+              className="todoListPageTitle block w-[243px] h-[40px] overflow-hidden bg-no-repeat"
               href="#"
             ></a>
           </h1>
